@@ -20,4 +20,10 @@ public class BookController {
 	{
 		return "products";
 	}
+	
+	@GetMapping("/products")
+	public String product1()
+	{
+		return "data";
+	}
 }
