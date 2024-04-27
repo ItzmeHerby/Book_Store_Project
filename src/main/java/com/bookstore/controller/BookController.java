@@ -15,15 +15,23 @@ public class BookController {
 		return "home" ;
 	}
 	
-	@GetMapping("/products")
-	public String product()
+	@GetMapping("/book-register")
+	public String bookRegister()
 	{
-		return "products";
+		return "book-register";
 	}
 	
-	@GetMapping("/products")
-	public String product1()
+	@GetMapping("/available-books")
+	public String availableBooks()
 	{
-		return "data";
+		return "available-books" ;
 	}
+	
+	@GetMapping("/my-collection")
+	public String myCollection()
+	{
+		return "my-collection";
+	}
+	
+	
 }

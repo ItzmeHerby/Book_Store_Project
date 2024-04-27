@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th ="https://thymeleaf.com">
+<html xmlns:th="https://thymeleaf.com">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -29,18 +29,28 @@
 				<li><a href="my-collection">My Collection</a></li>
 				<li><a href="book-register">Register new book</a></li>
 				<li><a href="#">About</a></li>
+
 			</ul>
 		</div>
 	</nav>
+	<div class="container my-5 p-5" style= "border:1px solid back;" align ="center">
+		<form class="col-md-4 offset-md-4">
+			<div class="mb-3">
+				<label for="bookName" class="form-label">Enter Book Name</label> <input
+					type="text" class="form-control" name="bookName">
+			</div>
 
-	<div class="container">
-		<div class="container text-center">
-			<h1>Book store website</h1>
-			<h3>This is a book store website</h3>
-			<img alt="a book store image" src="/images/book-store-vector.jpg"
-				width="400">
-		</div>
+			<div class="mb-3">
+				<label for="authorName" class="form-label">Enter Author Name</label>
+				<input type="text" class="form-control" name="authorName">
+			</div>
+
+			<div class="mb-3">
+				<label for="bookPrice" class="form-label">Enter Price of
+					Book </label> <input type="text" class="form-control" name="bookPrice">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 	</div>
-
 </body>
 </html>
