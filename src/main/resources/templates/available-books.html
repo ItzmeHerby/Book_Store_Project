@@ -34,6 +34,29 @@
 		</div>
 	</nav>
 
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Book Name</th>
+					<th scope="col">Author Name</th>
+					<th scope="col">Price</th>
+					<th scope="col">Action</th>
 
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each = "b :${listOfBooks}">
+					<th scope="row"></th>
+					<td th:text = "${b.bookId}"></td>
+					<td th:text = "${b.bookName}"></td>
+					<td th:text = "${b.authorName}"></td>
+					<td th:text = "${b.bookPrice}"></td>
+					<td><a class = "btn btn-secondary btn-sm"></a>Add to My Collection</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>

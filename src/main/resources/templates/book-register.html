@@ -33,8 +33,10 @@
 			</ul>
 		</div>
 	</nav>
-	<div class="container my-5 p-5" style= "border:1px solid back;" align ="center">
-		<form class="col-md-4 offset-md-4">
+	<div class="container my-5 p-5" style="border: 1px solid back;"
+		align="center">
+		<form class="col-md-4 offset-md-4" th:action="@{/savebook}" method="post">
+		 <h4>Register new book</h4>
 			<div class="mb-3">
 				<label for="bookName" class="form-label">Enter Book Name</label> <input
 					type="text" class="form-control" name="bookName">
