@@ -17,11 +17,11 @@ public class BookService {
 	
 	public void saveBook(Book b)
 	{
-		bookRepository.save(b);
+		bookRepository.save(b);  // method call -  already present in repo (JPA repository method)
 	}
 	
 	public List<Book> getAllBooks()
 	{
-		return bookRepository.findAll();
+		return bookRepository.findAll();  // method call - already present in repo (JPA repository method)
 	}
 }

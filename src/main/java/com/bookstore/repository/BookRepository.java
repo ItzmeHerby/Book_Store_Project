@@ -8,4 +8,6 @@ import com.bookstore.entity.Book;
 @Repository
 public interface BookRepository extends JpaRepository<Book, Integer>{
 
+	//1st parameter - Book entity 
+	//2nd parameter - dataType of id
 }

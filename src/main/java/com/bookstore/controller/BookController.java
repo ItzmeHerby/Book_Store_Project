@@ -22,31 +22,31 @@ public class BookController {
 	@Autowired
 	private BookService bookService;
 
-	@GetMapping("/home")
+	@GetMapping("/home")          // will render to html view page in template folder 
 	public String home() {
 		return "home";
 	}
 
-	@GetMapping("/book-register")
+	@GetMapping("/book-register")    // will render to html view page in template folder 
 	public String bookRegister() {
 		return "book-register";
 	}
 
-	@GetMapping("/available-books")
+	@GetMapping("/available-books")   // will render to html view page in template folder. Usage of Thymelead
 	public ModelAndView availableBooks() {
 		List<Book> list = bookService.getAllBooks();
 		return new ModelAndView("available-books" , "listOfBooks" , list);
 	}
 
-	@GetMapping("/my-collection")
+	@GetMapping("/my-collection")   // will render to html view page in template folder 
 	public String myCollection() {
 		return "my-collection";
 	}
 
-	@PostMapping("/savebook")
+	@PostMapping("/savebook")   // Will store the book info as in book entity
 	public String addBook(@ModelAttribute Book b) // to Binding and exposing the view
 	{
-		bookService.saveBook(b);
+		bookService.saveBook(b);                // call method in service
 		return "redirect:/available-books"; // After registering a book user is re-directed to available-books page
 	}
 
