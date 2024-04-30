@@ -24,4 +24,10 @@ public class BookService {
 	{
 		return bookRepository.findAll();  // method call - already present in repo (JPA repository method)
 	}
+	
+	
+	public Book getBookById (int id)
+	{
+		return bookRepository.findById(id).get();
+	}
 }
