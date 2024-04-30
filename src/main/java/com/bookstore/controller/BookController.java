@@ -54,14 +54,14 @@ public class BookController {
 		return "redirect:/available-books"; // After registering a book user is re-directed to available-books page
 	}
 
-	@GetMapping("/my-collection")
+	@GetMapping("/my-collection")   // Changes made in method to display my collection after saving books into collection
 	public String myCollection(Model model) {
 	    List<MyCollection> list = myCollectionService.getAllBooks();
 	    model.addAttribute("listOfBooks", list);
 	    return "my-collection";
 	}
 
-	@GetMapping("/mycollection/{id}")
+	@GetMapping("/mycollection/{id}") // Method to save book by calling method from book service by ID and storing it in object of mycollection
 	public String saveBookToCollection(@PathVariable int id) {
 		Book b = bookService.getBookById(id);
 		MyCollection mc = new MyCollection(b.getBookId(), b.getBookName(), b.getAuthorName(), b.getBookPrice());

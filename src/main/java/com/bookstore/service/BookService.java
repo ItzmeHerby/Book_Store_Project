@@ -26,7 +26,7 @@ public class BookService {
 	}
 	
 	
-	public Book getBookById (int id)
+	public Book getBookById (int id) // method call - to get book by passing id 
 	{
 		return bookRepository.findById(id).get();
 	}
