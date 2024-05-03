@@ -20,7 +20,7 @@
             <li><a href="available-books">Collection</a></li>
             <li><a href="my-collection">My Collection</a></li>
             <li><a href="book-register">Register new book</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="BoredReadingPlayAGame">About</a></li>
         </ul>
     </div>
 </nav>
@@ -42,7 +42,7 @@
                 <td th:text="${b.bookName}"></td>
                 <td th:text="${b.authorName}"></td>
                 <td th:text="${b.bookPrice}"></td>
-                <td><a class="btn btn-dark btn-sm" th:href="@{/mycollection/{id}(id=${b.bookId})}">
+                <td><a class="btn btn-dark" th:href="@{/mycollection/{id}(id=${b.bookId})}">
                     <span>Add book to My Collection</span></a></td>
             </tr>
         </tbody>

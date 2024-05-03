@@ -23,4 +23,9 @@ public class MyCollectionService {
 	{
 		return myCollectionRepository.findAll();
 	}
+	
+	public void deleteBookByID (int id)
+	{
+		myCollectionRepository.deleteById(id);
+	}
 }

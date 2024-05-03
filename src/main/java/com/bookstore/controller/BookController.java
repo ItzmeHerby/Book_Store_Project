@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -54,20 +54,31 @@ public class BookController {
 		return "redirect:/available-books"; // After registering a book user is re-directed to available-books page
 	}
 
-	@GetMapping("/my-collection")   // Changes made in method to display my collection after saving books into collection
+	@GetMapping("/my-collection") // Changes made in method to display my collection after saving books into
+									// collection
 	public String myCollection(Model model) {
-	    List<MyCollection> list = myCollectionService.getAllBooks();
-	    model.addAttribute("listOfBooks", list);
-	    return "my-collection";
+		List<MyCollection> list = myCollectionService.getAllBooks();
+		model.addAttribute("listOfBooks", list);
+		return "my-collection";
 	}
 
-	@GetMapping("/mycollection/{id}") // Method to save book by calling method from book service by ID and storing it in object of mycollection
-	public String saveBookToCollection(@PathVariable int id) {
-		Book b = bookService.getBookById(id);
-		MyCollection mc = new MyCollection(b.getBookId(), b.getBookName(), b.getAuthorName(), b.getBookPrice());
-		myCollectionService.saveBookToMyCollection(mc);
-		return "redirect:/my-collection";
-
-	}
-
+	
+	  @GetMapping("/mycollection/{id}") // Method to save book by calling method from book service by ID and storing it in mycollection
+	  public String SaveBookToCollection(@PathVariable int id) 
+	  {
+	  Book b = bookService.getBookById(id); MyCollection mc = new
+	  MyCollection(b.getBookId(), b.getBookName(), b.getAuthorName(),
+	  b.getBookPrice()); myCollectionService.saveBookToMyCollection(mc); return
+	  "redirect:/my-collection";
+	  
+	  }
+	  
+	  
+	  @RequestMapping("/mycollections/{id}") // Method to delete book by calling method from book service by ID and deleting it from my mycollection 
+	  public String DeleteBookOfMyCollection(@PathVariable int id){
+	  myCollectionService.deleteBookByID(id); return "redirect:/my-collection";
+	   
+	  }
+	  
+	 
 }

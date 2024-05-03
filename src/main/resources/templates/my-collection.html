@@ -42,8 +42,8 @@
                 <td th:text="${b.bookName}"></td>
                 <td th:text="${b.authorName}"></td>
                 <td th:text="${b.bookPrice}"></td>
-                <td><a class="btn btn-dark btn-sm" th:href="@{/mycollection/{id}(id=${b.bookId})}">
-                    <span>Add book to My Collection</span></a></td>
+                <td><a class="btn btn-dark" th:href="@{/mycollections/{id}(id=${b.bookId})}">
+                    <span>Delete book from my collection</span></a></td>
             </tr>
         </tbody>
     </table>
